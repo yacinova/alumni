@@ -2001,13 +2001,12 @@ if (is_user_logged_in() && current_user_can('etudiant')) {
     </div>
     
     <!-- Partners Section -->
-    <div style="background-color: #f8f9fa; padding: 60px 0;">
+    <!-- <div style="background-color: #f8f9fa; padding: 60px 0;">
         <div class="container">
             <div class="text-center mb-5">
                 <h2 style="color: #333; font-size: 28px; font-weight: 700;">Partenaires</h2>
             </div>
             
-            <!-- Partners Slider -->
             <div class="row align-items-center justify-content-center">
                 <div class="col-lg-2 col-md-3 col-6 text-center mb-4">
                     <img src="https://via.placeholder.com/150x80/e74c3c/ffffff?text=GROUPE+INSA" alt="Groupe INSA" style="max-height: 60px; width: auto;">
@@ -2023,7 +2022,7 @@ if (is_user_logged_in() && current_user_can('etudiant')) {
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- <div class="section events-section">
         <div class="container">

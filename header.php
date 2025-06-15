@@ -1041,7 +1041,7 @@ $viewport_content = apply_filters( 'hello_elementor_viewport_content', 'width=de
                     </div>
                 </div>
             </li>
-            <li class="dropdown">
+            <!-- <li class="dropdown">
                 <a href="#" class="dropdown-toggle">Réseau</a>
                 <div class="dropdown-content">
                     <div class="container full-width-dropdown">
@@ -1061,7 +1061,7 @@ $viewport_content = apply_filters( 'hello_elementor_viewport_content', 'width=de
                         </div>
                     </div>
                 </div>
-            </li>
+            </li> -->
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle">Annuaire</a>
                 <div class="dropdown-content">
