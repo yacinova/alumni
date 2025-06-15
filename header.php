@@ -154,7 +154,6 @@ $viewport_content = apply_filters( 'hello_elementor_viewport_content', 'width=de
     justify-content: space-between;
     align-items: center;
 }
-
 .header-left {
     display: flex;
     align-items: center;
@@ -224,10 +223,54 @@ $viewport_content = apply_filters( 'hello_elementor_viewport_content', 'width=de
 
 
 
+.btn-adhere {
+    background-color: var(--alumni-white);
+    color: #0b1c39;
+    border: 1px solid #0b1c39;
+}
+
+.btn-connect {
+    background-color: #0b1c39;
+    color: var(--alumni-white);
+    border: 1px solid #0b1c39;
+}
+
+/* Logo section */
+.insa-logo-section {
+    padding: 20px 0;
+    background-color: #0b1c39;
+}
+
+.insa-logo-section .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.insa-logo-section .logo {
+    display: block;
+}
+
+.insa-logo-section .logo img {
+    max-height: 60px;
+    width: auto;
+}
+
+.insa-logo-section .tagline {
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+}
+
+.insa-logo-section .tagline .highlight {
+    color: #d4af37;
+    font-weight: bold;
+}
+
 .insa-navigation {
-    background-color: #1a3a6c;
+    border-top: 2px solid #d4af37;
+    background-color: #0b1c39;
     padding: 0;
-    position: relative;
 }
 
 .nav-menu {
@@ -254,6 +297,7 @@ $viewport_content = apply_filters( 'hello_elementor_viewport_content', 'width=de
 .nav-menu li a:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
+
 
 /* Dropdown Styles */
 .dropdown {

@@ -1647,76 +1647,41 @@ if (is_user_logged_in() && current_user_can('etudiant')) {
     
     <!-- actualités et événements -->
     <div class="container row mt-5 d-flex align-items-center">
-        <!-- News Section -->
-        <div class="col-lg-9 mx-auto">
-            <!-- <h3 style="font-size: 24px; font-weight: 700; margin-bottom: 24px; color: #0b1c39;">Actualité à la Une</h3> -->
+        <!-- Events Section -->
+        <div class="col-lg-9 mx-auto mt-4">
             <div class="news-card" style="background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); overflow: hidden;">
                 <div style="position: relative;">
-                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
-                         alt="News Image" 
+                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                         alt="Event Image" 
                          style="width: 100%; height: 200px; object-fit: cover;">
-                    <div style="position: absolute; top: 16px; left: 16px; background: #e74c3c; color: white; padding: 8px 16px; border-radius: 4px; font-weight: 600;">
-                        27 mars 2024
+                    <div style="position: absolute; top: 16px; left: 16px; background: #0b1c39; color: white; padding: 8px 16px; border-radius: 4px; font-weight: 600;">
+                        Soirée Alumni
                     </div>
                 </div>
                 <div style="padding: 24px;">
                     <h4 style="font-size: 20px; font-weight: 700; color: #0b1c39; margin-bottom: 16px;">
-                        Ouverture des Inscriptions pour le Concours de la Rentrée
+                        Chers anciens de l'ESG, Préparez-vous à raviver les souvenirs !
                     </h4>
-                    <p style="color: #666; font-size: 15px; line-height: 1.6; margin-bottom: 20px;">
-                        Les inscriptions pour le concours de la rentrée sont maintenant ouvertes. Une opportunité unique pour les futurs étudiants de rejoindre notre prestigieuse institution.
-                    </p>
+                    <div style="color: #666; font-size: 15px; line-height: 1.6; margin-bottom: 20px;">
+                        <p><strong>📅 Date :</strong> Vendredi 20 juin 2025</p>
+                        <p><strong>🕖 Heure :</strong> À partir de 19h</p>
+                        <p><strong>📍 Lieu :</strong> Hôtel Sofitel Casablanca</p>
+                        <p>Parce qu'il est temps de retrouver ceux avec qui on a (presque) révisé, ri, stressé, fêté… et surtout partagé des années inoubliables !</p>
+                        <ul style="list-style: none; padding-left: 0;">
+                            <li>🔹 Replongez dans l'ambiance d'antan – sans les partiels, mais avec les cocktails.</li>
+                            <li>🔹 Anecdotes croustillantes fortement encouragées.</li>
+                            <li>🔹 Bonne humeur obligatoire !</li>
+                        </ul>
+                        <p>🎉 Une soirée placée sous le signe de la convivialité et des retrouvailles.</p>
+                        <p>👉 Bloquez la date, alertez les copains et retrouvez vos vieilles photos de classe !</p>
+                        <p><em>Plus d'informations à venir très bientôt…</em></p>
+                    </div>
                     <a href="#" class="btn" style="background: #0b1c39; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; display: inline-block;">
-                        En savoir plus
+                        Je m'inscris
                     </a>
                 </div>
             </div>
         </div>
-        <!-- Events Section -->
-        <!-- <div class="col-lg-8">
-            <div style="position: relative; padding: 20px;">
-                <div style="position: absolute; top: 0; right: 0; width: 60%; height: 100%; background: #0b1c39;"></div>
-                <h3 style="font-size: 18px; font-weight: 600;">Événements</h3>
-
-                <div class="row g-3 position-relative" style="z-index: 2;">
-                    <div class="col-6">
-                        <div class="position-relative rounded overflow-hidden" style="background: url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80') center/cover; height: 180px;">
-                            <div class="position-absolute top-0 start-0 h-100 p-3 d-flex flex-column justify-content-center text-white" style="width: 50%;">
-                                <div class="fs-4 fw-bold mb-1">13.03</div>
-                                <div style="font-size: 12px; line-height: 1.3;">★ À vos agendas : cycle de réunions mensuelles- Réunion du...</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-6">
-                        <div class="position-relative rounded overflow-hidden" style="background: url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80') center/cover; height: 180px;">
-                            <div class="position-absolute top-0 start-0 h-100 p-3 d-flex flex-column justify-content-center text-white" style="width: 50%;">
-                                <div class="fs-4 fw-bold mb-1">13.03</div>
-                                <div style="font-size: 12px; line-height: 1.3;">★ À vos agendas : cycle de réunions mensuelles- Réunion du...</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-6">
-                        <div class="position-relative rounded overflow-hidden" style="background: url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80') center/cover; height: 180px;">
-                            <div class="position-absolute top-0 start-0 h-100 p-3 d-flex flex-column justify-content-center text-white" style="width: 50%;">
-                                <div class="fs-4 fw-bold mb-1">★</div>
-                                <div style="font-size: 12px; line-height: 1.3;">Mobilité de demain : Performance économique ou développement...</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-6">
-                        <div class="position-relative rounded overflow-hidden" style="background: url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80') center/cover; height: 180px;">
-                            <div class="position-absolute top-0 start-0 h-100 p-3 d-flex flex-column justify-content-center text-white" style="width: 50%;">
-                                <div class="fs-4 fw-bold mb-1">10.04</div>
-                                <div style="font-size: 12px; line-height: 1.3;">★ ASSEMBLÉE RÉGIONALE de notre GR à l'occasion de la Réunion du...</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
     </div>
 
     <div class="mt-5 position-relative">
