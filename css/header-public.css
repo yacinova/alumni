@@ -1,0 +1,456 @@
+/* Styles for public header (header.php) */
+:root {
+    --alumni-navy: #0b1c39;
+    --alumni-gold: #d4af37;
+    --alumni-gold-light: #e9d282;
+    --alumni-white: #ffffff;
+    --alumni-gray: #f5f5f5;
+    --alumni-text: #333333;
+    --alumni-border: #eaeaea;
+    --alumni-shadow: rgba(0, 0, 0, 0.05);
+}
+
+.hover-grow {
+    transition: transform 0.2s ease;
+}
+
+.hover-grow:hover {
+    transform: scale(1.05);
+}
+
+/* Specific button styles for public header */
+.alumni-public-header .profile-btn {
+    background: #fff !important;
+    color: var(--alumni-navy) !important;
+    border: 2px solid var(--alumni-gold) !important;
+}
+
+.alumni-public-header .profile-btn:hover {
+    background: var(--alumni-gold) !important;
+    color: var(--alumni-navy) !important;
+}
+
+.alumni-public-header .dashboard-btn {
+    background: var(--alumni-gold) !important;
+    color: var(--alumni-navy) !important;
+    border: 2px solid var(--alumni-gold) !important;
+}
+
+.alumni-public-header .dashboard-btn:hover {
+    background: var(--alumni-navy) !important;
+    color: var(--alumni-gold) !important;
+    border-color: var(--alumni-gold) !important;
+}
+
+.alumni-public-header .logout-btn {
+    background: var(--alumni-navy) !important;
+    color: var(--alumni-gold) !important;
+    border: 2px solid var(--alumni-navy) !important;
+}
+
+.alumni-public-header .logout-btn:hover {
+    background: transparent !important;
+    color: #fff !important;
+    border-color: #fff !important;
+}
+
+/* Styles specifically for elements within .alumni-public-header */
+.alumni-public-header {
+    background: #ffffff;
+    color: var(--alumni-navy);
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    border-bottom: 1px solid #eaeaea;
+}
+
+.alumni-public-header .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+.alumni-public-header .logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.alumni-public-header .logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--alumni-navy);
+}
+
+.alumni-public-header .logo-img {
+    height: 80px;
+    margin-right: 15px;
+}
+
+.alumni-public-header .site-title {
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.6rem;
+}
+
+.alumni-public-header .main-navigation {
+    display: flex;
+    gap: 30px;
+}
+
+.alumni-public-header .main-navigation a {
+    color: var(--alumni-navy);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 5px 0;
+    position: relative;
+}
+
+.alumni-public-header .main-navigation a:hover {
+    color: var(--alumni-gold);
+}
+
+.alumni-public-header .main-navigation .user-link {
+    background: var(--alumni-gold);
+    color: var (--alumni-navy);
+    padding: 5px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    border: 2px solid var(--alumni-gold);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.alumni-public-header .main-navigation .user-link:hover {
+    background: var(--alumni-navy);
+    color: var(--alumni-gold);
+}
+
+.alumni-public-header .main-navigation .user-link i {
+    margin-right: 5px;
+}
+
+.alumni-public-header .main-navigation .login-link {
+    background: var(--alumni-navy);
+    color: var(--alumni-gold);
+    padding: 5px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    border: 2px solid var(--alumni-navy);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.alumni-public-header .main-navigation .login-link:hover {
+    background: transparent;
+    border-color: var(--alumni-navy);
+    color: var(--alumni-navy);
+}
+
+.alumni-public-header .main-navigation .login-link i {
+    margin-right: 5px;
+}
+
+/* Mobile menu toggle button */
+.alumni-public-header .mobile-menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--alumni-navy);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 100;
+    position: relative;
+    margin-left: auto;
+}
+
+.alumni-public-header .mobile-menu-toggle.active {
+    color: var(--alumni-gold);
+}
+
+.alumni-public-header .mobile-menu-toggle:focus {
+    outline: none;
+}
+
+/* Media queries for responsive design */
+@media screen and (max-width: 1024px) {
+    .alumni-public-header .site-title {
+        font-size: 1.4rem;
+    }
+    
+    .alumni-public-header .logo-img {
+        height: 70px;
+    }
+    
+    .alumni-public-header .main-navigation {
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .alumni-public-header .header-container {
+        /* Keep original layout - don't use column direction */
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .alumni-public-header .logo-container {
+        /* Keep original positioning - don't center */
+        margin: 0;
+        width: auto;
+        justify-content: flex-start;
+        text-align: left;
+    }
+    
+    .alumni-public-header .logo-link {
+        justify-content: flex-start;
+    }
+    
+    .alumni-public-header .mobile-menu-toggle {
+        display: block;
+    }
+    
+    .alumni-public-header .main-navigation {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #f9f9f9;
+        padding: 15px;
+        gap: 15px;
+        z-index: 99;
+        border-radius: 0 0 5px 5px;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+    
+    .alumni-public-header .main-navigation.mobile-open {
+        display: flex;
+    }
+    
+    .alumni-public-header .logo-img {
+        height: 60px;
+    }
+    
+    .alumni-public-header .site-title {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .alumni-public-header {
+        padding: 15px 10px;
+    }
+    
+    .alumni-public-header .logo-img {
+        height: 50px;
+        margin-right: 10px;
+    }
+    
+    .alumni-public-header .site-title {
+        font-size: 1rem;
+    }
+    
+    .alumni-public-header .main-navigation a {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .alumni-public-header .main-navigation a:last-child {
+        border-bottom: none;
+    }
+    
+    .alumni-public-header .main-navigation .user-link,
+    .alumni-public-header .main-navigation .login-link {
+        justify-content: center;
+        margin-top: 5px;
+    }
+}
+
+
+/* Full-width dropdown navigation styles */
+.insa-navigation {
+    position: relative;
+    z-index: 100;
+}
+
+.insa-navigation .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.insa-navigation .nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.insa-navigation .nav-menu > li {
+    position: relative;
+    flex: 1;
+}
+
+.insa-navigation .dropdown-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--alumni-white);
+    text-decoration: none;
+    padding: 15px 10px;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+}
+
+.insa-navigation .dropdown-toggle i {
+    margin-left: 8px;
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.insa-navigation .dropdown.active .dropdown-toggle i {
+    transform: rotate(180deg);
+}
+
+.insa-navigation .dropdown-toggle:hover,
+.insa-navigation .dropdown.active .dropdown-toggle {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--alumni-gold);
+}
+
+.insa-navigation .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    z-index: 101;
+    padding: 0;
+    min-width: 200px;
+    width: max-content;
+    max-width: 300px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    border-radius: 0 0 8px 8px;
+}
+
+/* Adjust positioning for dropdowns that might go off-screen */
+.insa-navigation .nav-menu > li:nth-last-child(-n+2) .dropdown-content {
+    left: auto;
+    right: 0;
+}
+
+.insa-navigation .dropdown:hover .dropdown-content,
+.insa-navigation .dropdown.active .dropdown-content {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.insa-navigation .full-width-dropdown {
+    width: 100%;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.insa-navigation .dropdown-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.insa-navigation .dropdown-column {
+    width: 100%;
+    min-width: auto;
+}
+
+.insa-navigation .dropdown-column h4 {
+    color: var(--alumni-navy);
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--alumni-gold);
+}
+
+.insa-navigation .dropdown-column a {
+    display: block;
+    color: var(--alumni-text);
+    text-decoration: none;
+    padding: 8px 15px;
+    transition: all 0.2s ease;
+    width: 100%;
+    margin-bottom: 0;
+    border-radius: 0;
+    font-size: 13px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.insa-navigation .dropdown-column a:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+.insa-navigation .dropdown-column a:hover {
+    color: var(--alumni-navy);
+    background-color: #f8f9fa;
+    transform: none;
+}
+
+/* Responsive dropdown menu */
+@media screen and (max-width: 992px) {
+    .insa-navigation .nav-menu {
+        flex-direction: column;
+    }
+    
+    .insa-navigation .nav-menu > li {
+        position: relative;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .insa-navigation .dropdown-toggle {
+        justify-content: space-between;
+        padding: 15px;
+    }
+    
+    .insa-navigation .dropdown-content {
+        position: relative;
+        box-shadow: none;
+        width: 100%;
+        max-width: none;
+        min-width: auto;
+    }
+    
+    .insa-navigation .dropdown-inner {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .insa-navigation .full-width-dropdown {
+        padding: 15px;
+    }
+}

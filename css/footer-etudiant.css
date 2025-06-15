@@ -1,0 +1,74 @@
+/* Styles for etudiant footer (footer-etudiant.php) */
+:root {
+    /* Re-declare variables if needed, or ensure they are globally available */
+    --alumni-navy: #0b1c39;
+    --alumni-gold: #d4af37;
+    --alumni-white: #ffffff;
+    --alumni-shadow: rgba(0, 0, 0, 0.2);
+}
+
+.etudiant-footer {
+    background: var(--alumni-navy);
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 -3px 10px var(--alumni-shadow);
+    border-top: 3px solid var(--alumni-gold);
+}
+
+.etudiant-footer .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.etudiant-footer .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+.etudiant-footer .social-links a {
+    color: var(--alumni-gold);
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+}
+
+.etudiant-footer .social-links a:hover {
+    color: #fff;
+}
+
+.etudiant-footer .footer-nav {
+    margin-bottom: 20px;
+}
+
+.etudiant-footer .footer-nav a {
+    color: var(--alumni-gold);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.etudiant-footer .footer-nav a:hover {
+    color: #fff;
+}
+
+.etudiant-footer .footer-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.etudiant-footer .footer-logo-img {
+    height: 80px;
+    margin-right: 15px; /* Consider removing if logo is centered alone */
+}
+
+.etudiant-footer .copyright {
+    margin: 0;
+    opacity: 0.8;
+    font-size: 0.9rem;
+}

@@ -1,0 +1,49 @@
+/*
+Theme Name: Hello Elementor Child
+Template: hello-elementor
+Author: Amad Chiboub
+Version: 1.0
+Description: Thème enfant pour Allumni ESG basé sur Hello Elementor
+*/
+
+.etudiant-header a:hover {
+    background-color: #ffeaea;
+    color: #c23b3f;
+}
+
+@media screen and (max-width: 768px) {
+    .profil-split-container {
+        flex-direction: column;
+    }
+}
+.profil-resume p, .profil-form .acf-field {
+    margin-bottom: 15px;
+}
+
+/* Event Registration Buttons */
+.registration-button {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.registration-button.register {
+    background-color: #27ae60;
+    color: white;
+}
+
+.registration-button.unregister {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.registration-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
