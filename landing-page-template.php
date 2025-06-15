@@ -1552,33 +1552,6 @@ if (is_user_logged_in() && current_user_can('etudiant')) {
 
 
 <main id="content" class="alumni-landing-page">
-    <!-- <div class="hero-section">
-        <div class="hero-slider swiper heroSwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide hero-slide" style="background-image: url('assets/images/campus.jpg');">
-                    <div class="container">
-                        <div class="hero-content">
-                            <h2>À vos agendas : cycle de réunions mensuelles</h2>
-                            <p class="subtitle">Réunion du 13/03/2025</p>
-                            <?php if (!is_user_logged_in()) : ?>
-                            <div class="cta-buttons">
-                                <a href="#" class="btn btn-secondary">En savoir plus</a>
-                            </div>
-                            <?php else: ?>
-                            <div class="welcome-back">
-                                <p>Heureux de vous revoir, <?php echo wp_get_current_user()->display_name; ?></p>
-                                <a href="#" class="btn btn-primary">Mon tableau de bord</a>
-                            </div>
-                            <?php endif; ?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-        </div>
-    </div> -->
 
     <!-- carousel Section -->
     <div class="hero-section">
@@ -1675,63 +1648,37 @@ if (is_user_logged_in() && current_user_can('etudiant')) {
     <!-- actualités et événements -->
     <div class="container row mt-5 d-flex align-items-center">
         <!-- News Section -->
-        <div class="col-lg-4">
-            <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 18px;">Actualités</h3>
-            <div style="display: flex; flex-direction: column; gap: 12px;">
-                <!-- News Item 1 -->
-                <div style="display: flex; gap: 10px; align-items: flex-start;">
-                    <div style="width: 56px; height: 56px; background: #e74c3c; border-radius: 4px; display: flex; align-items: center; justify-content: center;">
-                        <span style="color: #fff; font-weight: bold; font-size: 22px;">Logo</span>
-                    </div>
-                    <div>
-                        <div style="font-size: 14px; font-weight: 600; color: #222;">Ouverture Inscriptions, concours pour la rentrée</div>
-                        <div style="font-size: 12px; color: #888;">27 mars 2024</div>
+        <div class="col-lg-9 mx-auto">
+            <!-- <h3 style="font-size: 24px; font-weight: 700; margin-bottom: 24px; color: #0b1c39;">Actualité à la Une</h3> -->
+            <div class="news-card" style="background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); overflow: hidden;">
+                <div style="position: relative;">
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                         alt="News Image" 
+                         style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="position: absolute; top: 16px; left: 16px; background: #e74c3c; color: white; padding: 8px 16px; border-radius: 4px; font-weight: 600;">
+                        27 mars 2024
                     </div>
                 </div>
-                <!-- News Item 2 -->
-                <div style="display: flex; gap: 10px; align-items: flex-start;">
-                    <div style="width: 56px; height: 56px; background: #e74c3c; border-radius: 4px; display: flex; align-items: center; justify-content: center;">
-                        <span style="color: #fff; font-weight: bold; font-size: 22px;">Logo</span>
-                    </div>
-                    <div>
-                        <div style="font-size: 14px; font-weight: 600; color: #222;">Conférence sur la transition écologique en France</div>
-                        <div style="font-size: 12px; color: #888;">15 février 2024</div>
-                    </div>
-                </div>
-                <!-- News Item 3 -->
-                <div style="display: flex; gap: 10px; align-items: flex-start;">
-                    <div style="width: 56px; height: 56px; background: #e74c3c; border-radius: 4px; display: flex; align-items: center; justify-content: center;">
-                        <span style="color: #fff; font-weight: bold; font-size: 22px;">Logo</span>
-                    </div>
-                    <div>
-                        <div style="font-size: 14px; font-weight: 600; color: #222;">Réhabilitation ancienne bibliothèque</div>
-                        <div style="font-size: 12px; color: #888;">12 janvier 2024</div>
-                    </div>
-                </div>
-                <!-- News Item 4 -->
-                <div style="display: flex; gap: 10px; align-items: flex-start;">
-                    <div style="width: 56px; height: 56px; background: #e74c3c; border-radius: 4px; display: flex; align-items: center; justify-content: center;">
-                        <span style="color: #fff; font-weight: bold; font-size: 22px;">Logo</span>
-                    </div>
-                    <div>
-                        <div style="font-size: 14px; font-weight: 600; color: #222;">Les anciens lauréats en guest lecture</div>
-                        <div style="font-size: 12px; color: #888;">2 octobre 2024</div>
-                    </div>
+                <div style="padding: 24px;">
+                    <h4 style="font-size: 20px; font-weight: 700; color: #0b1c39; margin-bottom: 16px;">
+                        Ouverture des Inscriptions pour le Concours de la Rentrée
+                    </h4>
+                    <p style="color: #666; font-size: 15px; line-height: 1.6; margin-bottom: 20px;">
+                        Les inscriptions pour le concours de la rentrée sont maintenant ouvertes. Une opportunité unique pour les futurs étudiants de rejoindre notre prestigieuse institution.
+                    </p>
+                    <a href="#" class="btn" style="background: #0b1c39; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; display: inline-block;">
+                        En savoir plus
+                    </a>
                 </div>
             </div>
         </div>
-        
         <!-- Events Section -->
-        <div class="col-lg-8">
-            <!-- Cyan background container -->
+        <!-- <div class="col-lg-8">
             <div style="position: relative; padding: 20px;">
-                <!-- Cyan background positioned on the right 50% -->
                 <div style="position: absolute; top: 0; right: 0; width: 60%; height: 100%; background: #0b1c39;"></div>
                 <h3 style="font-size: 18px; font-weight: 600;">Événements</h3>
 
-                <!-- Event cards positioned above the background -->
                 <div class="row g-3 position-relative" style="z-index: 2;">
-                    <!-- Event Card 1 -->
                     <div class="col-6">
                         <div class="position-relative rounded overflow-hidden" style="background: url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80') center/cover; height: 180px;">
                             <div class="position-absolute top-0 start-0 h-100 p-3 d-flex flex-column justify-content-center text-white" style="width: 50%;">
@@ -1741,7 +1688,6 @@ if (is_user_logged_in() && current_user_can('etudiant')) {
                         </div>
                     </div>
                     
-                    <!-- Event Card 2 -->
                     <div class="col-6">
                         <div class="position-relative rounded overflow-hidden" style="background: url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80') center/cover; height: 180px;">
                             <div class="position-absolute top-0 start-0 h-100 p-3 d-flex flex-column justify-content-center text-white" style="width: 50%;">
@@ -1751,7 +1697,6 @@ if (is_user_logged_in() && current_user_can('etudiant')) {
                         </div>
                     </div>
                     
-                    <!-- Event Card 3 -->
                     <div class="col-6">
                         <div class="position-relative rounded overflow-hidden" style="background: url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80') center/cover; height: 180px;">
                             <div class="position-absolute top-0 start-0 h-100 p-3 d-flex flex-column justify-content-center text-white" style="width: 50%;">
@@ -1761,7 +1706,6 @@ if (is_user_logged_in() && current_user_can('etudiant')) {
                         </div>
                     </div>
                     
-                    <!-- Event Card 4 -->
                     <div class="col-6">
                         <div class="position-relative rounded overflow-hidden" style="background: url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80') center/cover; height: 180px;">
                             <div class="position-absolute top-0 start-0 h-100 p-3 d-flex flex-column justify-content-center text-white" style="width: 50%;">
@@ -1772,7 +1716,7 @@ if (is_user_logged_in() && current_user_can('etudiant')) {
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 
     <div class="mt-5 position-relative">
@@ -1954,7 +1898,7 @@ if (is_user_logged_in() && current_user_can('etudiant')) {
     </div>
     
     <!-- Groups Section -->
-    <div style="background-color: #0b1c39; padding: 60px 0;">
+    <div style=" padding: 60px 0;">
         <div class="container">
             <div class="row text-center">
                 <!-- Regional Groups -->
@@ -1962,11 +1906,11 @@ if (is_user_logged_in() && current_user_can('etudiant')) {
                     <div class="text-white">
                         <div class="mb-3">
                             <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" stroke="#d4af37" stroke-width="2" fill="#d4af37"/>
-                                <circle cx="12" cy="12" r="8" stroke="#d4af37" stroke-width="2" fill="none"/>
+                                <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" stroke="#0b1c39" stroke-width="2" fill="#0b1c39"/>
+                                <circle cx="12" cy="12" r="8" stroke="#0b1c39" stroke-width="2" fill="none"/>
                             </svg>
                         </div>
-                        <h4 style="font-size: 16px; font-weight: 600; margin-bottom: 10px;">GROUPES RÉGIONAUX</h4>
+                        <h4 style="color: #0b1c39; font-size: 16px; font-weight: 600; margin-bottom: 10px;">GROUPES RÉGIONAUX</h4>
                     </div>
                 </div>
                 
@@ -1975,11 +1919,11 @@ if (is_user_logged_in() && current_user_can('etudiant')) {
                     <div class="text-white">
                         <div class="mb-3">
                             <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="12" cy="12" r="10" stroke="#d4af37" stroke-width="2" fill="none"/>
-                                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="#d4af37" stroke-width="2"/>
+                                <circle cx="12" cy="12" r="10" stroke="#0b1c39" stroke-width="2" fill="none"/>
+                                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="#0b1c39" stroke-width="2"/>
                             </svg>
                         </div>
-                        <h4 style="font-size: 16px; font-weight: 600; margin-bottom: 10px;">GROUPES INTERNATIONAUX</h4>
+                        <h4 style="color: #0b1c39; font-size: 16px; font-weight: 600; margin-bottom: 10px;">GROUPES INTERNATIONAUX</h4>
                     </div>
                 </div>
                 
@@ -1988,12 +1932,12 @@ if (is_user_logged_in() && current_user_can('etudiant')) {
                     <div class="text-white">
                         <div class="mb-3">
                             <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="#d4af37" stroke-width="2" fill="none"/>
-                                <line x1="8" y1="21" x2="16" y2="21" stroke="#d4af37" stroke-width="2"/>
-                                <line x1="12" y1="17" x2="12" y2="21" stroke="#d4af37" stroke-width="2"/>
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="#0b1c39" stroke-width="2" fill="none"/>
+                                <line x1="8" y1="21" x2="16" y2="21" stroke="#0b1c39" stroke-width="2"/>
+                                <line x1="12" y1="17" x2="12" y2="21" stroke="#0b1c39" stroke-width="2"/>
                             </svg>
                         </div>
-                        <h4 style="font-size: 16px; font-weight: 600; margin-bottom: 10px;">GROUPES PROFESSIONNELS</h4>
+                        <h4 style="color: #0b1c39; font-size: 16px; font-weight: 600; margin-bottom: 10px;">GROUPES PROFESSIONNELS</h4>
                     </div>
                 </div>
             </div>
