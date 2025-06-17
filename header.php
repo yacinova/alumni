@@ -1047,7 +1047,7 @@ $viewport_content = apply_filters( 'hello_elementor_viewport_content', 'width=de
                 <button><i class="fas fa-search"></i></button>
             </div>
             <div class="action-buttons">
-                <a href="#" class="btn btn-adhere"><i class="fas fa-user-plus"></i> Adhérer</a>
+                <a href="adherer" class="btn btn-adhere"><i class="fas fa-user-plus"></i> Adhérer</a>
                 <a href="connexion-etudiant" class="btn btn-connect"><i class="fas fa-sign-in-alt"></i> Se connecter</a>
             </div>
         </div>
