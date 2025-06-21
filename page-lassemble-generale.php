@@ -681,8 +681,11 @@ if (is_user_logged_in() && current_user_can('etudiant')) {
       </p>
       <h3>Gouvernance :</h3>
       <ul>
-        <li>Le bureau a été renouvelé en juin 2018 : ...</li>
-        <li>...</li>
+        <li>Président : Monsieur Karim MENJOUR</li>
+        <li>Vice-Président : Monsieur Issam BENJELLOUN</li>
+        <li>Secrétaire Général : Madame Ikram DOUADI</li>
+        <li>Secrétaire Général Adjoint : Monsieur Anas CHORFI</li>
+        <li>Trésorier : Monsieur Youness LAMARTI</li>
       </ul>
       <h3>Site internet <span class="ag-animateur">(Animateur : Sylvain PHILIPPE - CVL MRI-TPR 06)</span></h3>
       <ul>

@@ -617,6 +617,47 @@ if (is_user_logged_in() && current_user_can('etudiant')) {
             <ul style="margin-left: 30px;">
                 <li><strong>Les statuts</strong></li>
             </ul>
+            <div style="margin-top: 30px;">
+                <h3>Organisation de l'Association</h3>
+                <ul>
+                    <li>
+                        <strong>Assemblée Générale</strong> :<br>
+                        L'organe suprême de l'association, composé de tous les membres actifs. Elle se réunit une fois par an pour :
+                        <ul>
+                            <li>Approuver les rapports moraux et financiers</li>
+                            <li>Élire les membres du Conseil d'Administration</li>
+                            <li>Définir les grandes orientations de l'association</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Conseil d'Administration</strong> :<br>
+                        Organe de gestion composé de membres élus par l'Assemblée Générale. Il se réunit régulièrement pour :
+                        <ul>
+                            <li>Mettre en œuvre les décisions de l'Assemblée Générale</li>
+                            <li>Superviser les activités de l'association</li>
+                            <li>Élire le Bureau Exécutif</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Bureau Exécutif</strong> :<br>
+                        Organe exécutif composé du Président, Vice-Président, Secrétaire Général, Trésorier, etc. Il est chargé de :
+                        <ul>
+                            <li>Gérer les affaires courantes</li>
+                            <li>Représenter l'association</li>
+                            <li>Exécuter les décisions du Conseil d'Administration</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Commissions</strong> :<br>
+                        Groupes de travail thématiques créés par le Conseil d'Administration pour :
+                        <ul>
+                            <li>Mener des projets spécifiques</li>
+                            <li>Animer la vie associative</li>
+                            <li>Proposer des actions au Bureau Exécutif</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
     </section>
 </main>

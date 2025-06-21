@@ -5,13 +5,19 @@
  * Template pour l'inscription des membres
  */
 
-if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
-if (is_user_logged_in()) {
-    get_header('etudiant');
-} else {
-    get_header();
-}
+ /**
+  * Template Name: Landing Page INSA Alumni
+  * Description: Template personnalisé pour la page d'accueil INSA Alumni
+  */
+ 
+ // Chargement conditionnel du header selon que l'utilisateur est connecté ou non
+ if (is_user_logged_in() && current_user_can('etudiant')) {
+     get_template_part('header', 'etudiant');
+ } else {
+     get_header();
+ }
+
 
 // Get taxonomy terms
 $localisations = get_terms([
@@ -130,11 +136,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register_member'])) {
 
 <style>
     :root {
-        --alumni-navy: #0b1c39;
-        --alumni-gold: #d4af37;
-        --alumni-white: #ffffff;
-        --alumni-shadow: rgba(0, 0, 0, 0.2);
-    }
+    --alumni-navy: #0b1c39;
+    --alumni-blue: #0066b2;
+    --alumni-gold: #d4af37;
+    --alumni-gold-light: #e9d282;
+    --alumni-white: #ffffff;
+    --alumni-gray: #f5f5f5;
+    --alumni-text: #333333;
+    --alumni-border: #eaeaea;
+    --alumni-shadow: rgba(0, 0, 0, 0.05);
+}
 
     .registration-container {
         max-width: 800px;
@@ -376,7 +387,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register_member'])) {
     </form>
 
     <div class="login-link">
-        <p>Déjà inscrit ? <a href="<?php echo esc_url(wp_login_url()); ?>">Connectez-vous</a></p>
+        <p>Déjà inscrit ? <a href="https://esg-alumni.ma/connexion-etudiant/">Connectez-vous</a></p>
     </div>
 </div>
 

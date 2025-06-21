@@ -10,6 +10,28 @@ if (is_user_logged_in() && current_user_can('etudiant')) {
 } else {
     get_header();
 }
+
+if (isset($_POST['submit_gov_contact'])) {
+    $to = 'contact@votre-domaine.com'; // Remplace par l'email du comité
+    $subject = 'Candidature ou contact - Comité de gouvernance';
+    $message = "Nom: " . sanitize_text_field($_POST['nom']) . "\n";
+    $message .= "Email: " . sanitize_email($_POST['email']) . "\n";
+    $message .= "Message:\n" . sanitize_textarea_field($_POST['message']) . "\n";
+    $headers = ['From: ' . sanitize_email($_POST['email'])];
+
+    // Gestion du fichier joint (CV)
+    if (!empty($_FILES['cv']['tmp_name'])) {
+        $uploadedfile = $_FILES['cv'];
+        $upload = wp_handle_upload($uploadedfile, ['test_form' => false]);
+        if (!isset($upload['error'])) {
+            $cv_url = $upload['url'];
+            $message .= "\nCV: $cv_url";
+        }
+    }
+
+    wp_mail($to, $subject, $message, $headers);
+    echo '<div style="background:#d4edda;color:#155724;padding:12px 18px;border-radius:5px;margin:20px 0;">Votre message a bien été envoyé !</div>';
+}
 ?>
 
 
@@ -602,91 +624,192 @@ if (is_user_logged_in() && current_user_can('etudiant')) {
     color: #009640;
     cursor: default;
 }
+
+.centered-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Pour centrer aussi verticalement, sinon retirez cette ligne */
+    min-height: 100vh; /* Pour occuper toute la hauteur de la fenêtre */
+}
+
+.member-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.member-card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    min-width: 160px;      /* largeur minimale */
+    max-width: 220px;      /* largeur maximale */
+    width: 100%;           /* prend la largeur disponible dans la grille */
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    margin: 0 5px;
+}
+
+.member-avatar {
+    width: 70px !important;      /* taille identique partout */
+    height: 70px !important;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 10px;
+    display: block;
+    background: #eee;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 6px #0001;
+}
+
+.member-avatar i {
+    font-size: 32px !important;   /* Taille de l'icône */
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.member-name {
+    font-weight: bold;
+    font-size: 1.1rem;
+    word-break: break-word;      /* coupe les mots trop longs */
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+}
+
+.committee-flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-start;
+}
+.committee-structure {
+    flex: 2 1 400px;
+    min-width: 340px;
+}
+.governance-contact-form {
+    flex: 1 1 320px;
+    min-width: 300px;
+    max-width: 400px;
+    margin: 0;
+}
+@media (max-width: 900px) {
+    .committee-flex-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .governance-contact-form {
+        margin-top: 40px;
+        max-width: 500px;
+    }
+}
 </style>
 
 <main id="content" class="alumni-landing-page">
-    <section class="section key-stats-section">
-        <div class="container">
-            <!-- Titre -->
-            <div style="display: flex; align-items: center; margin-bottom: 30px;">
-                <h2 style="font-size: 2.2rem; font-weight: bold; color: #7a7a7a; margin: 0;">Comité de gouvernance 
-                </h2>
-                <hr style="flex: 1; margin-left: 20px; border: none; border-top: 2px solid #2196f3;">
+    <div class="centered-content">
+        <section class="section key-stats-section">
+            <div class="container">
+                <!-- Titre -->
+                <div style="display: flex; align-items: center; margin-bottom: 30px;">
+                    <h2 style="font-size: 2.2rem; font-weight: bold; color: #7a7a7a; margin: 0;">Comité de gouvernance 
+                    </h2>
+                    <hr style="flex: 1; margin-left: 20px; border: none; border-top: 2px solid #2196f3;">
+                </div>
+
+                <!-- Structure for Committee Members -->
+                <div class="committee-flex-container">
+                    <div class="committee-structure">
+                        <!-- Président -->
+                        <h3 style="font-size: 1.5rem; margin-top: 30px; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 5px;">Président</h3>
+                        <div class="member-grid" style="display: flex; flex-wrap: wrap; gap: 20px;">
+                            <!-- Placeholder for President Member -->
+                            <div class="member-card" style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 5px; padding: 15px; text-align: center; min-width: 150px;">
+                                <img src="/wp-admin/images/Karim.jpg" alt="Karim MENJOUR" class="member-avatar" style="width: 60px; height: 60px; border-radius: 50%; margin: 0 auto 10px; object-fit: cover;">
+                                <div class="member-name" style="font-weight: bold; font-size: 1.1rem;"> Monsieur Karim MENJOUR<br><span style="font-size:0.9em;color:#888;">Président</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Vice-Président -->
+                        <h3 style="font-size: 1.5rem; margin-top: 30px; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 5px;">Vice-Président</h3>
+                        <div class="member-grid" style="display: flex; flex-wrap: wrap; gap: 20px;">
+                            <!-- Placeholder for Vice-President Members -->
+                            <div class="member-card" style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 5px; padding: 15px; text-align: center; min-width: 150px;">
+                                <img src="/wp-admin/images/Issam.jpg" alt="Issam BENJELLOUN" class="member-avatar" style="width: 60px; height: 60px; border-radius: 50%; margin: 0 auto 10px; object-fit: cover;">
+                                <div class="member-name" style="font-weight: bold; font-size: 1.1rem;">Monsieur Issam BENJELLOUN<br><span style="font-size:0.9em;color:#888;">Vice-Président</span></div>
+                            </div>
+                            
+                             <!-- Add more Vice-President members as needed -->
+                        </div>
+
+                        <!-- Trésorier -->
+                        <h3 style="font-size: 1.5rem; margin-top: 30px; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 5px;">Trésorier</h3>
+                        <div class="member-grid" style="display: flex; flex-wrap: wrap; gap: 20px;">
+                            <!-- Placeholder for Trésorier Member -->
+                            <div class="member-card" style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 5px; padding: 15px; text-align: center; min-width: 150px;">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/members/youness-lamarti.jpg" alt="Youness LAMARTI" class="member-avatar" style="width: 60px; height: 60px; border-radius: 50%; margin: 0 auto 10px; object-fit: cover;">
+                                <div class="member-name" style="font-weight: bold; font-size: 1.1rem;">Monsieur Youness LAMARTI<br><span style="font-size:0.9em;color:#888;">Trésorier</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Secrétaire Général & Adjoint sur la même ligne -->
+                        <h3 style="font-size: 1.5rem; margin-top: 30px; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 5px;">
+                            Secrétaire Général &amp; Secrétaire Général Adjoint
+                        </h3>
+                        <div class="member-grid">
+                            <div class="member-card">
+                                <img src="/wp-admin/images/Ikram.jpg" alt="Ikram DOUADI" class="member-avatar" style="width: 60px; height: 60px; border-radius: 50%; margin: 0 auto 10px; object-fit: cover;">
+                                <div class="member-name" style="font-weight: bold; font-size: 1.1rem;">Madame Ikram DOUADI<br><span style="font-size:0.9em;color:#888;">Secrétaire Général</span></div>
+                            </div>
+                            <div class="member-card">
+                            <img src="/wp-admin/images/Anas .jpg" alt="Anas Chorfi" class="member-avatar" style="width: 60px; height: 60px; border-radius: 50%; margin: 0 auto 10px; object-fit: cover;">
+                                <div class="member-name" style="font-weight: bold; font-size: 1.1rem;">Monsieur Anas CHORFI<br><span style="font-size:0.9em;color:#888;">Secrétaire Général Adjoint</span></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="governance-contact-form" style="max-width:500px;margin:40px auto 0;background:#fff;border-radius:8px;box-shadow:0 2px 8px #0001;padding:32px;">
+                        <h3 style="color:#0b65a0;margin-bottom:18px; text-align: center;">Contacter le comité</h3>
+                        <form method="post" action="" enctype="multipart/form-data">
+                            <div style="margin-bottom:16px;">
+                                <label for="nom" style="font-weight:600;">Nom *</label>
+                                <input type="text" id="nom" name="nom" required style="width:100%;padding:10px;border:1px solid #ccc;border-radius:4px;">
+                            </div>
+                            <div style="margin-bottom:16px;">
+                                <label for="email" style="font-weight:600;">Email *</label>
+                                <input type="email" id="email" name="email" required style="width:100%;padding:10px;border:1px solid #ccc;border-radius:4px;">
+                            </div>
+                            <div style="margin-bottom:16px;">
+                                <label for="message" style="font-weight:600;">Message / Motivation *</label>
+                                <textarea id="message" name="message" rows="5" required style="width:100%;padding:10px;border:1px solid #ccc;border-radius:4px;"></textarea>
+                            </div>
+                            <div style="margin-bottom:16px;">
+                                <label for="cv" style="font-weight:600;">CV (PDF ou DOCX)</label>
+                                <input type="file" id="cv" name="cv" accept=".pdf,.docx" style="width:100%;padding:10px;border:1px solid #ccc;border-radius:4px;">
+                            </div>
+                            <button type="submit" name="submit_gov_contact" style="background:#d4af37;color:#0b1c39;font-weight:700;padding:12px 24px;border:none;border-radius:4px;cursor:pointer;width:100%;">Envoyer</button>
+                        </form>
+                    </div>
+
+                </div>
+
             </div>
-
-            <!-- Structure for Committee Members -->
-            <div class="committee-structure">
-                <!-- Président -->
-                <h3 style="font-size: 1.5rem; margin-top: 30px; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 5px;">Président</h3>
-                <div class="member-grid" style="display: flex; flex-wrap: wrap; gap: 20px;">
-                    <!-- Placeholder for President Member -->
-                    <div class="member-card" style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 5px; padding: 15px; text-align: center; min-width: 150px;">
-                        <div class="member-avatar" style="width: 60px; height: 60px; background: #ccc; border-radius: 50%; margin: 0 auto 10px;"></div>
-                        <div class="member-name" style="font-weight: bold; font-size: 1.1rem;">[President Name]</div>
-                        <div class="member-details" style="font-size: 0.9rem; color: #555;">[President Details]</div>
-                    </div>
-                </div>
-
-                <!-- Vice-Président -->
-                <h3 style="font-size: 1.5rem; margin-top: 30px; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 5px;">Vice-Président</h3>
-                <div class="member-grid" style="display: flex; flex-wrap: wrap; gap: 20px;">
-                    <!-- Placeholder for Vice-President Members -->
-                    <div class="member-card" style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 5px; padding: 15px; text-align: center; min-width: 150px;">
-                        <div class="member-avatar" style="width: 60px; height: 60px; background: #ccc; border-radius: 50%; margin: 0 auto 10px;"></div>
-                        <div class="member-name" style="font-weight: bold; font-size: 1.1rem;">[Vice-President Name 1]</div>
-                        <div class="member-details" style="font-size: 0.9rem; color: #555;">[Vice-President Details 1]</div>
-                    </div>
-                    <div class="member-card" style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 5px; padding: 15px; text-align: center; min-width: 150px;">
-                        <div class="member-avatar" style="width: 60px; height: 60px; background: #ccc; border-radius: 50%; margin: 0 auto 10px;"></div>
-                        <div class="member-name" style="font-weight: bold; font-size: 1.1rem;">[Vice-President Name 2]</div>
-                        <div class="member-details" style="font-size: 0.9rem; color: #555;">[Vice-President Details 2]</div>
-                    </div>
-                     <!-- Add more Vice-President members as needed -->
-                </div>
-
-                <!-- Trésorier -->
-                <h3 style="font-size: 1.5rem; margin-top: 30px; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 5px;">Trésorier</h3>
-                <div class="member-grid" style="display: flex; flex-wrap: wrap; gap: 20px;">
-                    <!-- Placeholder for Trésorier Member -->
-                    <div class="member-card" style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 5px; padding: 15px; text-align: center; min-width: 150px;">
-                        <div class="member-avatar" style="width: 60px; height: 60px; background: #ccc; border-radius: 50%; margin: 0 auto 10px;"></div>
-                        <div class="member-name" style="font-weight: bold; font-size: 1.1rem;">[Trésorier Name]</div>
-                        <div class="member-details" style="font-size: 0.9rem; color: #555;">[Trésorier Details]</div>
-                    </div>
-                </div>
-
-                <!-- Secrétaire -->
-                <h3 style="font-size: 1.5rem; margin-top: 30px; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 5px;">Secrétaire</h3>
-                <div class="member-grid" style="display: flex; flex-wrap: wrap; gap: 20px;">
-                    <!-- Placeholder for Secrétaire Member -->
-                    <div class="member-card" style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 5px; padding: 15px; text-align: center; min-width: 150px;">
-                        <div class="member-avatar" style="width: 60px; height: 60px; background: #ccc; border-radius: 50%; margin: 0 auto 10px;"></div>
-                        <div class="member-name" style="font-weight: bold; font-size: 1.1rem;">[Secrétaire Name]</div>
-                        <div class="member-details" style="font-size: 0.9rem; color: #555;">[Secrétaire Details]</div>
-                    </div>
-                </div>
-
-                <!-- Membre -->
-                <h3 style="font-size: 1.5rem; margin-top: 30px; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 5px;">Membre</h3>
-                <div class="member-grid" style="display: flex; flex-wrap: wrap; gap: 20px;">
-                    <!-- Placeholder for Membre Members -->
-                    <div class="member-card" style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 5px; padding: 15px; text-align: center; min-width: 150px;">
-                        <div class="member-avatar" style="width: 60px; height: 60px; background: #ccc; border-radius: 50%; margin: 0 auto 10px;"></div>
-                        <div class="member-name" style="font-weight: bold; font-size: 1.1rem;">[Membre Name 1]</div>
-                        <div class="member-details" style="font-size: 0.9rem; color: #555;">[Membre Details 1]</div>
-                    </div>
-                    <div class="member-card" style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 5px; padding: 15px; text-align: center; min-width: 150px;">
-                        <div class="member-avatar" style="width: 60px; height: 60px; background: #ccc; border-radius: 50%; margin: 0 auto 10px;"></div>
-                        <div class="member-name" style="font-weight: bold; font-size: 1.1rem;">[Membre Name 2]</div>
-                        <div class="member-details" style="font-size: 0.9rem; color: #555;">[Membre Details 2]</div>
-                    </div>
-                     <!-- Add more Membre members as needed -->
-                </div>
-
-            </div>
-
-        </div>
-    </section>
+        </section>
+    </div>
 </main>
 
 <?php 

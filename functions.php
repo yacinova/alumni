@@ -1176,7 +1176,7 @@ add_action('init', function () {
     if (!get_role('etudiant')) {
         add_role('etudiant', 'Étudiant', [
             'read' => true,              // Peut accéder au tableau de bord
-            'edit_posts' => false,       // Ne peut pas écrire d’articles
+            'edit_posts' => false,       // Ne peut pas écrire d'articles
             'delete_posts' => false,
         ]);
     }
@@ -3205,3 +3205,53 @@ function register_leader_post_type() {
     ]);
 }
 add_action('init', 'register_leader_post_type');
+
+function enqueue_landing_page_styles() {
+    if (is_page_template('landing-page-template.php')) {
+        wp_enqueue_style('landing-page', get_template_directory_uri() . '/css/landing-page.css', array(), '1.0.0');
+    }
+}
+add_action('wp_enqueue_scripts', 'enqueue_landing_page_styles');
+
+// Add filter fields for members page
+add_action('restrict_manage_posts', function () {
+    global $typenow;
+    if ($typenow === 'membres') {
+
+        // Active status filter
+        echo '<select name="member_status" id="filter-by-status">';
+        echo '<option value="">Tous les statuts</option>';
+        $statuses = [
+            'active' => 'Actif',
+            'inactive' => 'Inactif'
+        ];
+        foreach ($statuses as $value => $label) {
+            $selected = isset($_GET['member_status']) && $_GET['member_status'] === $value ? 'selected' : '';
+            echo '<option value="' . esc_attr($value) . '" ' . $selected . '>' . esc_html($label) . '</option>';
+        }
+        echo '</select>';
+    }
+});
+
+// Apply the filters
+add_filter('parse_query', function ($query) {
+    global $pagenow, $typenow;
+
+    if ($pagenow === 'edit.php' && $typenow === 'membres') {
+        $tax_query = [];
+
+        // Filter by active status
+        if (isset($_GET['member_status']) && !empty($_GET['member_status'])) {
+            $query->query_vars['meta_query'][] = [
+                'key' => 'active',
+                'value' => $_GET['member_status'] === 'active' ? '1' : '0',
+                'compare' => '='
+            ];
+        }
+
+        // Add tax query if filters are set
+        if (!empty($tax_query)) {
+            $query->query_vars['tax_query'] = $tax_query;
+        }
+    }
+});
