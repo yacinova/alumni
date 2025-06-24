@@ -1125,8 +1125,8 @@ $viewport_content = apply_filters( 'hello_elementor_viewport_content', 'width=de
                     <div class="container full-width-dropdown">
                         <div class="dropdown-inner">
                             <div class="dropdown-column">
-                                <!-- <a href="#">Offres d’emploi</a> -->
-                                <!-- <a href="#">Proposer une offre d’emploi ou un stage</a> -->
+                                <!-- <a href="#">Offres d'emploi</a> -->
+                                <!-- <a href="#">Proposer une offre d'emploi ou un stage</a> -->
                                 <a href="#">Déposer un CV</a>
                             </div>
                         </div>

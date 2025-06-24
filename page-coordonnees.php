@@ -320,7 +320,7 @@ body {
                             </div>
                         </div>
 
-                        <div class="info-item">
+                        <!-- <div class="info-item">
                             <div class="info-label">
                                 <i class="bi bi-telephone-fill"></i>
                                 Téléphone
@@ -330,7 +330,7 @@ body {
                                     +212 5 22 00 00 00
                                 </a>
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="info-item">
                             <div class="info-label">
@@ -338,8 +338,8 @@ body {
                                 Email
                             </div>
                             <div class="info-value">
-                                <a href="mailto:contact@alumni-esg.ma" class="text-decoration-none">
-                                    contact@alumni-esg.ma
+                                <a href="mailto:contact@esg-alumni.ma" class="text-decoration-none">
+                                    contact@esg-alumni.ma
                                 </a>
                             </div>
                         </div>
@@ -360,32 +360,24 @@ body {
                         <div class="quick-contact">
                             <h6>Contact rapide</h6>
                             <div class="quick-contact-buttons">
-                                <a href="tel:+212522000000" class="btn-quick">
+                                <!-- <a href="tel:+212522000000" class="btn-quick">
                                     <i class="bi bi-telephone"></i>
                                     Appeler
-                                </a>
-                                <a href="mailto:contact@alumni-esg.ma" class="btn-quick">
+                                </a> -->
+                                <a href="mailto:contact@esg-alumni.ma" class="btn-quick">
                                     <i class="bi bi-envelope"></i>
                                     Email
                                 </a>
-                                <a href="https://wa.me/212522000000" class="btn-quick" target="_blank">
+                                <!-- <a href="https://wa.me/212522000000" class="btn-quick" target="_blank">
                                     <i class="bi bi-whatsapp"></i>
                                     WhatsApp
-                                </a>
+                                </a> -->
                             </div>
                         </div>
 
                         <!-- Map -->
                         <div class="map-container">
-                            <iframe 
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.4!2d-7.6204!3d33.5731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDM0JzIzLjIiTiA3wrAzNycxMy40Ilc!5e0!3m2!1sfr!2sma!4v1699000000000!5m2!1sfr!2sma" 
-                                width="100%" 
-                                height="250" 
-                                style="border:0;" 
-                                allowfullscreen="" 
-                                loading="lazy" 
-                                referrerpolicy="no-referrer-when-downgrade">
-                            </iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.5635803764167!2d-7.606094399999999!3d33.5906788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7cd63ffc235df%3A0xaddc367ec348e749!2s12%20Rue%20Sabri%20Boujemaa%2C%20Casablanca%2020110!5e0!3m2!1sfr!2sma!4v1750770141788!5m2!1sfr!2sma" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
                 </div>
@@ -420,7 +412,7 @@ body {
                             </div>
                         <?php endif; ?>
 
-                        <form method="post" action="" class="contact-form">
+                        <form method="post" action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" class="contact-form">
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <label for="contact_name" class="form-label">
@@ -429,6 +421,15 @@ body {
                                     <input type="text" class="form-control" name="contact_name" id="contact_name" required 
                                         value="<?php echo isset($_POST['contact_name']) ? esc_attr($_POST['contact_name']) : ''; ?>"
                                         placeholder="Votre nom complet">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="contact_phone" class="form-label">
+                                        <i class="bi bi-telephone me-1"></i>Téléphone
+                                    </label>
+                                    <input type="tel" class="form-control" name="contact_phone" id="contact_phone"
+                                        value="<?php echo isset($_POST['contact_phone']) ? esc_attr($_POST['contact_phone']) : ''; ?>"
+                                        placeholder="Votre numéro de téléphone">
                                 </div>
                                 
                                 <div class="col-md-6">
@@ -440,7 +441,7 @@ body {
                                         placeholder="votre.email@exemple.com">
                                 </div>
 
-                                <div class="col-12">
+                                <div class="col-md-6">
                                     <label for="contact_subject" class="form-label">
                                         <i class="bi bi-tag me-1"></i>Sujet *
                                     </label>

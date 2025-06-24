@@ -36,8 +36,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
             <div class="footer-col footer-contact">
                 <h3>Contact</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Campus ESG Maroc, Casablanca</p>
-                <p><i class="fas fa-envelope"></i> contact@alumni-esg.ma</p>
+                <p><i class="fas fa-map-marker-alt"></i> 12 Rue Sabri Boujemaa, Casablanca</p>
+                <p><i class="fas fa-envelope"></i> contact@esg-alumni.ma</p>
                 <p><i class="fas fa-phone"></i> +212 5XX-XXXXXX</p>
             </div>
         </div>
