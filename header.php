@@ -1078,7 +1078,7 @@ $viewport_content = apply_filters( 'hello_elementor_viewport_content', 'width=de
                                 <a href="/statuts">Les statuts</a>
                                 <!-- <a href="/reglement-interieur">Le règlement intérieur</a> -->
                                 <a href="/comite-de-gouvernance">Le comité de gouvernance</a>
-                                <a href="/lassemble-generale">L'assemblée générale</a>
+                                <!-- <a href="/lassemble-generale">L'assemblée générale</a> -->
                                 <a href="/coordonnees">Les coordonnées</a>
                             </div>
                         </div>
@@ -1112,8 +1112,7 @@ $viewport_content = apply_filters( 'hello_elementor_viewport_content', 'width=de
                     <div class="container full-width-dropdown">
                         <div class="dropdown-inner">
                             <div class="dropdown-column">
-                                <a href="#">Trouver un diplômé</a>
-                                <a href="#">Trouver une entreprise partenaire</a>
+                                <a href="#">Trouver un adhérent</a>
                                 <a href="#">CGU</a>
                             </div>
                         </div>
@@ -1127,7 +1126,7 @@ $viewport_content = apply_filters( 'hello_elementor_viewport_content', 'width=de
                         <div class="dropdown-inner">
                             <div class="dropdown-column">
                                 <!-- <a href="#">Offres d’emploi</a> -->
-                                <a href="#">Proposer une offre d’emploi ou un stage</a>
+                                <!-- <a href="#">Proposer une offre d’emploi ou un stage</a> -->
                                 <a href="#">Déposer un CV</a>
                             </div>
                         </div>

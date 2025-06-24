@@ -605,6 +605,7 @@ if (is_user_logged_in() && current_user_can('etudiant')) {
 </style>
 
 <main id="content" class="alumni-landing-page">
+<?php if (is_user_logged_in() && current_user_can('etudiant')) : ?>
     <section class="section key-stats-section">
         <div class="container">
             <div style="display: flex; align-items: center; margin-bottom: 30px;">
@@ -612,7 +613,7 @@ if (is_user_logged_in() && current_user_can('etudiant')) {
                 <hr style="flex: 1; margin-left: 20px; border: none; border-top: 2px solid #2196f3;">
             </div>
             <div style="margin-bottom: 20px; color: #444;">
-                Les statuts d'INSA alumni sont disponibles ci-dessous :
+                Les statuts d'ESG alumni sont disponibles ci-dessous :
             </div>
             <ul style="margin-left: 30px;">
                 <li><strong>Les statuts</strong></li>
@@ -660,6 +661,35 @@ if (is_user_logged_in() && current_user_can('etudiant')) {
             </div>
         </div>
     </section>
+<?php else : ?>
+    <section class="section" style="min-height: 60vh; display: flex; align-items: center; justify-content: center;">
+        <div class="container" style="text-align: center;">
+            <div style="max-width: 600px; margin: 0 auto; padding: 40px 20px;">
+                <h2 style="font-size: 2.5rem; font-weight: bold; color: var(--alumni-navy); margin-bottom: 20px;">
+                    Accès Restreint
+                </h2> 
+                <p style="font-size: 1.2rem; color: #666; margin-bottom: 30px; line-height: 1.6;">
+                    Cette page est réservée aux membres connectés d'ESG Alumni. 
+                    Veuillez vous connecter pour accéder aux statuts de l'association.
+                </p>
+                <div style="margin-top: 30px;">
+                    <a href="<?php echo wp_login_url(get_permalink()); ?>" class="btn btn-primary" style="font-size: 1.1rem; padding: 15px 30px;">
+                        <i class="fas fa-sign-in-alt" style="margin-right: 8px;"></i>
+                        Se connecter
+                    </a>
+                </div>
+                <div style="margin-top: 20px;">
+                    <p style="color: #888; font-size: 0.9rem;">
+                        Pas encore membre ? 
+                        <a href="<?php echo home_url('/connexion-etudiant'); ?>" style="color: var(--alumni-gold); text-decoration: none; font-weight: 600;">
+                            Créer un compte
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+<?php endif; ?>
 </main>
 
 <?php 

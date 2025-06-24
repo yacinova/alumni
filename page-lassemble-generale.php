@@ -669,7 +669,7 @@ if (is_user_logged_in() && current_user_can('etudiant')) {
 <main id="content" class="alumni-landing-page">
   <section class="section ag-section">
     <div class="container">
-      <h1 class="ag-title">Assemblée Générale<br>et Comité de Gouvernance INSA Alumni</h1>
+      <h1 class="ag-title">Assemblée Générale<br>et Comité de Gouvernance ESG Alumni</h1>
       <div class="ag-info-box">
         <p>
           Le 13 avril 2018, l'INSA de Toulouse et INSA Alumni Toulouse ont réuni les membres du comité de gouvernance (INSA Alumni et représentants INSA) pour l'Assemblée Générale d'INSA Alumni suivie par un Comité de Gouvernance.
