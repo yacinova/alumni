@@ -19,6 +19,70 @@ $viewport_content = apply_filters( 'hello_elementor_viewport_content', 'width=de
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="<?php echo esc_attr( $viewport_content ); ?>">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
+	
+	<?php
+        // SEO Meta Tags for specific pages
+        $current_page = $_SERVER['REQUEST_URI'] ?? '';
+        
+        // Politique de Confidentialité
+        if (strpos($current_page, 'politique-confidentialite') !== false || strpos($current_page, 'privacy-policy') !== false) {
+            echo '<title>Politique de Confidentialité | ESG Alumni Maroc</title>';
+            echo '<meta name="description" content="Découvrez comment ESG Alumni collecte, utilise et protège vos données personnelles conformément à la loi 09-08 au Maroc.">';
+            echo '<meta name="keywords" content="politique de confidentialité ESG, données personnelles Maroc, protection des données, CNDP Maroc, RGPD Maroc, loi 09-08, cookies ESG Alumni, sécurité données ESG">';
+            echo '<meta property="og:title" content="Politique de Confidentialité | ESG Alumni Maroc">';
+            echo '<meta property="og:description" content="Découvrez comment ESG Alumni collecte, utilise et protège vos données personnelles conformément à la loi 09-08 au Maroc.">';
+            echo '<meta property="og:type" content="website">';
+            echo '<meta name="twitter:card" content="summary">';
+            echo '<meta name="twitter:title" content="Politique de Confidentialité | ESG Alumni Maroc">';
+            echo '<meta name="twitter:description" content="Découvrez comment ESG Alumni collecte, utilise et protège vos données personnelles conformément à la loi 09-08 au Maroc.">';
+        }
+        // Mentions légales
+        elseif (strpos($current_page, 'mentions-legales') !== false || strpos($current_page, 'legal-notice') !== false) {
+            echo '<title>Mentions légales | ESG Alumni Maroc</title>';
+            echo '<meta name="description" content="Mentions légales du site esg-alumni.ma : propriété intellectuelle, responsabilité, protection des données, cookies et droit applicable au Maroc.">';
+            echo '<meta name="keywords" content="mentions légales ESG, propriété intellectuelle ESG Alumni, cookies site web Maroc, loi 09-08, loi 53-05, loi presse Maroc, droit applicable site Maroc, responsabilités site internet">';
+            echo '<meta property="og:title" content="Mentions légales | ESG Alumni Maroc">';
+            echo '<meta property="og:description" content="Mentions légales du site esg-alumni.ma : propriété intellectuelle, responsabilité, protection des données, cookies et droit applicable au Maroc.">';
+            echo '<meta property="og:type" content="website">';
+            echo '<meta name="twitter:card" content="summary">';
+            echo '<meta name="twitter:title" content="Mentions légales | ESG Alumni Maroc">';
+            echo '<meta name="twitter:description" content="Mentions légales du site esg-alumni.ma : propriété intellectuelle, responsabilité, protection des données, cookies et droit applicable au Maroc.">';
+        }
+        // 1985 - La naissance d'une école engagée
+        elseif (strpos($current_page, '1985') !== false || strpos($current_page, 'fondation') !== false || strpos($current_page, 'histoire') !== false) {
+            echo '<title>1985 – Fondation de l\'ESG Maroc | Une école engagée</title>';
+            echo '<meta name="description" content="Retour sur la fondation de l\'École Supérieure de Gestion Maroc en 1985 : une vision éducative innovante pour former les leaders de demain.">';
+            echo '<meta name="keywords" content="fondation ESG Maroc, histoire ESG, école supérieure Maroc, éducation Maroc 1985, école de gestion Casablanca, mission ESG, valeurs éducatives ESG, naissance ESG Alumni">';
+            echo '<meta property="og:title" content="1985 – Fondation de l\'ESG Maroc | Une école engagée">';
+            echo '<meta property="og:description" content="Retour sur la fondation de l\'École Supérieure de Gestion Maroc en 1985 : une vision éducative innovante pour former les leaders de demain.">';
+            echo '<meta property="og:type" content="article">';
+            echo '<meta name="twitter:card" content="summary">';
+            echo '<meta name="twitter:title" content="1985 – Fondation de l\'ESG Maroc | Une école engagée">';
+            echo '<meta name="twitter:description" content="Retour sur la fondation de l\'École Supérieure de Gestion Maroc en 1985 : une vision éducative innovante pour former les leaders de demain.">';
+        }
+        // Default meta tags for other pages
+        else {
+            echo '<title>ESG Alumni Maroc | Réseau des anciens étudiants</title>';
+            echo '<meta name="description" content="ESG Alumni Maroc - Réseau professionnel des anciens étudiants de l\'École Supérieure de Gestion. Découvrez nos événements, offres d\'emploi et opportunités de networking.">';
+            echo '<meta name="keywords" content="ESG Alumni, réseau alumni Maroc, anciens étudiants ESG, networking Maroc, événements ESG, offres emploi Maroc, communauté ESG">';
+            echo '<meta property="og:title" content="ESG Alumni Maroc | Réseau des anciens étudiants">';
+            echo '<meta property="og:description" content="ESG Alumni Maroc - Réseau professionnel des anciens étudiants de l\'École Supérieure de Gestion. Découvrez nos événements, offres d\'emploi et opportunités de networking.">';
+            echo '<meta property="og:type" content="website">';
+            echo '<meta name="twitter:card" content="summary">';
+            echo '<meta name="twitter:title" content="ESG Alumni Maroc | Réseau des anciens étudiants">';
+            echo '<meta name="twitter:description" content="ESG Alumni Maroc - Réseau professionnel des anciens étudiants de l\'École Supérieure de Gestion. Découvrez nos événements, offres d\'emploi et opportunités de networking.">';
+        }
+        
+        // Common meta tags for all pages
+        echo '<meta name="robots" content="index, follow">';
+        echo '<meta name="author" content="ESG Alumni Maroc">';
+        echo '<meta name="language" content="fr">';
+        echo '<meta name="geo.region" content="MA">';
+        echo '<meta name="geo.country" content="Maroc">';
+        echo '<meta name="geo.placename" content="Casablanca">';
+        echo '<link rel="canonical" href="' . (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]" . '">';
+    ?>
+	
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 	<?php wp_head(); ?>
     <?php // Styles moved to css/header-public.css ?>
