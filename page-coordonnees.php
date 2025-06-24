@@ -11,6 +11,7 @@ if (is_user_logged_in() && current_user_can('etudiant')) {
     get_header();
 }
 
+
 // Process contact form submission
 $form_submitted = false;
 $form_success = false;
@@ -50,14 +51,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_contact'])) {
 }
 ?>
 
-<!-- Bootstrap 5 CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<!-- Bootstrap Icons -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+    
 :root {
     --alumni-navy: #0b1c39;
     --alumni-gold: #d4af37;

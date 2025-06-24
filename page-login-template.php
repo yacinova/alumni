@@ -54,10 +54,17 @@ if (is_user_logged_in()) {
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
+
+    <!-- Back to Home Button -->
+    <a href="<?php echo home_url('/'); ?>" class="back-home-btn">
+        <span class="arrow">←</span>
+        <span>Retourner à l'accueil</span>
+    </a>
 
     <style>
         /* Modern Login Page Styles with Alumni ESG Brand Colors */
@@ -226,6 +233,80 @@ if (is_user_logged_in()) {
             margin: 0;
         }
 
+        /* Create Account Button Styles */
+        .create-account-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: transparent;
+            color: var(--alumni-navy);
+            text-decoration: underline;
+            padding: 10px 0;
+            font-size: 14px;
+            font-weight: 500;
+            border: none;
+            transition: all var(--transition-normal);
+            margin-top: 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .create-account-btn:hover {
+            background: transparent;
+            color: var(--alumni-gold);
+            text-decoration: underline;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .create-account-btn i {
+            font-size: 14px;
+        }
+
+        .create-account-btn span {
+            font-weight: 500;
+        }
+
+        /* Back to Home Button Styles */
+        .back-home-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--alumni-white);
+            color: var(--alumni-navy);
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+            font-weight: 600;
+            border: 2px solid var(--alumni-white);
+            transition: all var(--transition-normal);
+            box-shadow: var(--shadow-sm);
+            z-index: 10;
+        }
+
+        .back-home-btn:hover {
+            background: var(--alumni-navy);
+            color: var(--alumni-white);
+            border-color: var(--alumni-navy);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            text-decoration: none;
+        }
+
+        .back-home-btn i {
+            font-size: 14px;
+        }
+
+        .back-home-btn .arrow {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
         /* Mobile-Friendly Adjustments */
         @media (max-width: 768px) {
             .login-container {
@@ -274,6 +355,12 @@ if (is_user_logged_in()) {
                 'remember' => true
             ]);
             ?>
+
+            <!-- Si vous n'avez pas de compte, vous pouvez vous inscrire ici -->
+            <a href="<?php echo home_url('/adherer'); ?>" class="create-account-btn">
+                <i class="fas fa-user-plus"></i>
+                <span>Créer un compte</span>
+            </a>
         </div>
     </div>
 

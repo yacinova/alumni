@@ -1026,6 +1026,7 @@ $viewport_content = apply_filters( 'hello_elementor_viewport_content', 'width=de
 }
 </style>
 </head>
+<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/header.css">
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
@@ -1038,7 +1039,7 @@ $viewport_content = apply_filters( 'hello_elementor_viewport_content', 'width=de
                 <a href="#"><i class="fab fa-linkedin-in"></i></a>
             </div>
             <div class="header-links">
-            | &nbsp;<a href="#">CONTACTEZ-NOUS</a> &nbsp;
+            | &nbsp;<a href="/coordonnees">CONTACTEZ-NOUS</a> &nbsp;
             </div>
         </div>
         <div class="header-right">

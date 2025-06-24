@@ -673,7 +673,7 @@ if (is_user_logged_in() && current_user_can('etudiant')) {
                     Veuillez vous connecter pour accéder aux statuts de l'association.
                 </p>
                 <div style="margin-top: 30px;">
-                    <a href="<?php echo wp_login_url(get_permalink()); ?>" class="btn btn-primary" style="font-size: 1.1rem; padding: 15px 30px;">
+                    <a href="<?php echo home_url('/connexion-etudiant'); ?>" class="btn btn-primary" style="font-size: 1.1rem; padding: 15px 30px;">
                         <i class="fas fa-sign-in-alt" style="margin-right: 8px;"></i>
                         Se connecter
                     </a>

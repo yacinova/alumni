@@ -13,8 +13,6 @@ if (is_user_logged_in() && current_user_can('etudiant')) {
 
 ?>
 
-<!-- Bootstrap CSS CDN -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <main class="container py-5">
     <h1 class="mb-4 border-bottom pb-2">Comité de gouvernance</h1>
